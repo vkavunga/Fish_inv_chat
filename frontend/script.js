@@ -1,4 +1,4 @@
-const backendUrl = "https://fish-inv-chat.onrender.com";
+const backendUrl = 'https://fish-inv-chat.onrender.com';
 
 // Load fish list
 async function loadFish() {

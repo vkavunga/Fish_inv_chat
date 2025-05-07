@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fish Details</title>
+  <title>Customer View - Fish Inventory</title>
 </head>
 <body>
-  <h1>Available Fish</h1>
+  <h1>Available Fish Entries</h1>
   <div id="fishList"></div>
 
-  <script>
-    fetch('https://your-backend-url.onrender.com/fish')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('fishList');
-        data.forEach(fish => {
-          const div = document.createElement('div');
-          div.innerHTML = `
-            <h3>${fish.fishName}</h3>
-            <p>Place: ${fish.placeOfCatch}</p>
-            <p>Location: ${fish.catchLocation}</p>
-            <img src="${fish.qrImageUrl}" width="100"><br>
-            <img src="${fish.fishImageUrl}" width="150"><hr>
-          `;
-          container.appendChild(div);
-        });
-      });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

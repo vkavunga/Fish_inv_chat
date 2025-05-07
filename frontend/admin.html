@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Panel</title>
+  <title>Admin Portal - Fish Inventory</title>
 </head>
 <body>
-  <h1>Admin - Upload Fish</h1>
-  <form id="uploadForm" enctype="multipart/form-data">
+  <h1>Upload Fish Entry</h1>
+  <form id="uploadForm">
     <input type="text" name="fishName" placeholder="Fish Name" required><br>
     <input type="text" name="placeOfCatch" placeholder="Place of Catch" required><br>
     <input type="text" name="catchLocation" placeholder="Catch Location" required><br>
-    <label>QR Image:</label><input type="file" name="qrImage" required><br>
-    <label>Fish Image:</label><input type="file" name="fishImage" required><br>
+    QR Code Image: <input type="file" name="qrImage" accept="image/*" required><br>
+    Fish Image: <input type="file" name="fishImage" accept="image/*" required><br>
     <button type="submit">Upload</button>
   </form>
 
-  <h2>Manage Entries</h2>
+  <div id="editSection" style="display:none; margin-top: 20px;">
+    <h3>Edit Fish Entry</h3>
+    <form id="editForm">
+      <input type="hidden" id="fishId">
+      <input type="text" id="fishNameEdit" required><br>
+      <input type="text" id="placeOfCatchEdit" required><br>
+      <input type="text" id="catchLocationEdit" required><br>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+  <hr>
+  <h2>All Fish Entries</h2>
   <div id="fishList"></div>
 
   <script src="script.js"></script>
